@@ -277,3 +277,34 @@ html{
   font-size: 1.2rem;
   transition: .2s;
 }
+
+/* media queries to handle responsiveness */
+
+@media (max-width: 800px) {}
+
+
+
+@media (max-width: 700px) {
+  .meals{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+  }
+  
+}
+
+@media (max-width: 500px) {
+  input[type='text'] {
+    width: 100%;
+  }
+
+  .container{
+    max-width: 500px;
+  }
+
+  .meals{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 10px;
+    }
+}
