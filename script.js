@@ -1,9 +1,9 @@
 const search = document.getElementById('search'),
   submit = document.getElementsByClassName('search_btn'),
-  favDiv = document.getElementById('favDiv'),
+  favDiv = document.getElementById('favdiv'),
   resultHeading = document.getElementById('result_heading'),
   mealsEl = document.getElementById('meals'),
-  single_mealEl = document.getElementById('single_meal');
+  single_mealEl = document.getElementById('single-meal');
 
   
 let meals = [];
@@ -34,7 +34,7 @@ let meals = [];
                 (meal) => `
                 <div class = 'meal' > 
                   <img src = '${meal.strMealThumb}' alt = '${meal.strMeal}'/>
-                  <span class='favourite'  data-mealID="${meal.idMeal}" onclick='addMeal(event);' > <i class="fa-regular fa-bookmark"></i> </span>
+                  <span class='favourite'  data-mealID="${meal.idMeal}" onclick='addMeal(event);' > <i class="fa-regular  fa-bookmark"></i> </span>
                   <a href="#single-meal">
                     <div class = 'meal-info' data-mealID="${meal.idMeal}">
                       <h3> ${meal.strMeal} </h3>
@@ -164,3 +164,60 @@ function getMealById(mealID) {
       getMealById(mealID);
     }
   });
+
+
+  // favourite toggle
+function toggles() {
+    document.getElementById('popup').classList.toggle('active');
+  }
+
+
+// Delete meal from favourite list
+function deleteMeal(e) {
+  // console.log(e);
+
+  const mealInfo = e.path.find((item) => {
+    if (item.classList) {
+      return item.classList.contains('fav-container');
+    } else {
+      console.log('class not found');
+      return false;
+    }
+  });
+
+  let mealHeading = mealInfo.querySelector('h1').innerText;
+
+  // returns all heading except selected one of close button
+  meals = meals.filter((meal) => {
+    return meal.heading != mealHeading;
+  });
+
+  
+// Updating local storage before removing favourite meal from list
+  window.localStorage.setItem('meal', JSON.stringify(meals));
+
+  mealInfo.remove();
+}
+
+  // function to set favourite list after browser refresh
+const initializelist = function () {
+    const mealsData = JSON.parse(window.localStorage.getItem('meal'));
+  
+    meals = [...mealsData];
+  
+    for (let i = 0; i < meals.length; i++) {
+      let getMeal = meals[i];
+      console.log(getMeal);
+      let div = document.createElement('div');
+      div.innerHTML = `
+            <div class='fav-container'>
+             
+              <img src = '${getMeal.thumbnail}'  />
+              <h1 class='heading'>${getMeal.heading}</h1>
+              <span onclick = 'deleteMeal(event);'><i class="fa-solid fa-rectangle-xmark"></i></span>
+              
+            </div>
+          `;
+      favDiv.appendChild(div);
+    }
+  };

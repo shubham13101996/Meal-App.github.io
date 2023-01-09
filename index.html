@@ -12,7 +12,7 @@
     />
 </head>
 
-<body>
+<body onload="initializelist()">
     <div class="container">
         <h1>Meal Finder</h1>
 
@@ -23,21 +23,21 @@
             <button class="search_btn" type="submit">
                 <i class="fas fa-search"></i>
             </button>
-            <button class="fav_btn">
+            <button class="fav_btn" onclick="toggles()">
                 <i class="far fa-heart"></i>
             </button>
         </div>
              
         <!-- Aside Section - FAvourite list  -->
-        <section class="content">
-            <div class="close_btn">&times;</div>
+        <section class="content" id="popup">
+            <div class="close_btn" onclick="toggles()">&times;</div>
             <h1>Favourite Meals </h1>
             <div id="favdiv"></div>
         </section>
 
         <div id="result_heading"></div>
         <div id="meals" class="meals"></div>
-        <div id="single_meal"></div>
+        <div id="single-meal"></div>
     </div>
 
     <script src="script.js"></script>

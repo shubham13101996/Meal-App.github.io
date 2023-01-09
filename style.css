@@ -1,11 +1,14 @@
+html{
+  scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
-    scroll-behavior: smooth;
-    scroll-snap-type:  y mandatory;
+    scroll-snap-type:y mandatory;
   }
   
   body {
-    background: black;
+    background: rgb(197, 131, 44);
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
@@ -42,7 +45,7 @@
   }
   
   .fav_btn:hover{
-  background-color: rgb(97, 53, 53);
+  background-color: rgb(197, 131, 44);
   cursor: pointer;
   }
   
@@ -78,7 +81,8 @@
   }
   
   .fa-bookmark:hover{
-    background-color: rgb(97, 53, 53);
+    background-color: rgb(207, 121, 72);
+    overflow-wrap: normal;
   }
   
   
@@ -120,7 +124,7 @@
     opacity: 1;
   }
   
-  .single_meal {
+  .single-meal {
     margin-top: 30px;
     width: 100%;
     padding: 20px;
@@ -133,7 +137,7 @@
   .heading {
     display: block;
     width: 100%;
-    color: rgb(207, 137, 80);
+    color: rgb(29, 21, 15);
   }
   
   a{
@@ -154,7 +158,7 @@
     /* width: 100%; */
   }
   
-  .single_meal img {
+  .single-meal img {
     width: 350px;
     height: 300px;
     margin: 15px;
@@ -174,19 +178,19 @@
     
   }
   
-  .single_meal p {
+  .single-meal p {
     margin: 0;
     letter-spacing: 0.5px;
     line-height: 1.5;
     text-align: justify;
   }
   
-  .single_meal ul {
+  .single-meal ul {
     padding-left: 0;
     list-style-type: none;
   }
   
-  .single_meal ul li {
+  .single-meal ul li {
     border: 1px solid #ededed;
     border-radius: 5px;
     background-color: #fff;
@@ -215,24 +219,61 @@
   
 }
 
-.close-btn {
+.content h1{
+  color: orange;
+}
+
+.close_btn {
   cursor: pointer;
   position: absolute;
   right: 20px;
   top: 20px;
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 38px;
   background: rgb(0, 0, 0);
   color: #fff;
   font-size: 25px;
   text-align: center;
   border-radius: 50%;
 }
-.close-btn:hover{
+
+.close_btn:hover{
   background-color: rgb(199, 43, 43);
 }
 
 .content.active {
   transition: all 300ms ease-in-out;
   transform: scale(1);
+}
+
+/* favourite container elements - left side [created by javascript] */
+.fav-container{
+  display: flex;
+  margin: 1rem;
+  text-align: left;
+  border-radius: 5px;
+  background-color: #443636;
+  background-image: linear-gradient(147deg, #bd5454 0%, #a30f0f 74%);
+}
+
+.fav-container img{
+  width: 50px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.fav-container h1{
+  margin-left: 1rem;
+  font-size: 16px;
+  width: 200px;
+}
+
+.fa-rectangle-xmark{
+  margin-top: 15px;
+}
+
+.fa-rectangle-xmark:hover {
+  color: white;
+  font-size: 1.2rem;
+  transition: .2s;
 }
