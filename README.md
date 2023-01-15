@@ -24,5 +24,5 @@ Each meal will have remove from favourites button, clicking on which will remove
 # Important Links:
 
 1.API Link: https://www.themealdb.com/api.php
-2.Hosting Link: 
+2.Hosting Link: https://shubham13101996.github.io/Meal-App.github.io/
 3.Video Link: https://youtu.be/Qm-JbaDqG4I
