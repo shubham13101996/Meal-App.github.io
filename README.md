@@ -1,6 +1,6 @@
 # MEAL-APP 
 
-Frontend Interface using Html, CSS and Javascript for mealDB API. We can search any meal in API, view it's details like how to prepare, ingredients use, local from, images, etc. Had made use of local storage to make favourite meals list persistant so that it's available even after restart.
+Frontend Interface using Html, CSS and Javascript for mealDB API. We can search any meal in API, view it's details like how to prepare, ingredients use, local from, images, etc. Had made use of local storage to make favourite meals list persistant so that it's available even after restart/refresh.
 
 # TechStack :
 HTML , CSS , JAVASCRIPT
@@ -25,5 +25,4 @@ Each meal will have remove from favourites button, clicking on which will remove
 
 1.API Link: https://www.themealdb.com/api.php
 2.Hosting Link: 
-3.Video Link:
-
+3.Video Link: https://youtu.be/Qm-JbaDqG4I

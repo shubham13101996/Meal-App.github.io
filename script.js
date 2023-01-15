@@ -142,6 +142,7 @@ function getMealById(mealID) {
           `;
           // Rendering on DOM
           favDiv.appendChild(div);
+          alert("Dish Added to Favourite Successfully")
         });
     }
   }
